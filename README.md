@@ -42,7 +42,8 @@ https://ressources.data.sncf.com/api/explore/v2.1/catalog/datasets/regularite-me
 
 ### Méthode de récupération
 
-Les données sont récupérées dynamiquement via une requête API avec la bibliothèque requests, puis chargées avec pandas.
+Les données ne sont pas stockées dans le repository.  
+Elles sont récupérées dynamiquement via l’API open data de la SNCF avec la bibliothèque requests, puis chargées avec pandas.
 
 ### Variables principales
 | Variable | Description |
