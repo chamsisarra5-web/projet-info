@@ -33,19 +33,16 @@ Installer les dépendances :
 ```bash
 pip install -r requirements.txt
 ```
-Lancer le notebook :
-```bash
-jupyter notebook projet_tgv.ipynb
-```
+
+Puis ouvrir le notebook Jupyter et exécuter l’ensemble des cellules (Run all).
+
+
 
 ## 3. Données
 ### Source
 
-Les données proviennent de la plateforme open data de la SNCF :
+Les données proviennent de la plateforme open data de la SNCF, via l’API du jeu de données **Régularité mensuelle des TGV**.
 
-Dataset : Régularité mensuelle des TGV
-Accès via API :
-https://ressources.data.sncf.com/api/explore/v2.1/catalog/datasets/regularite-mensuelle-tgv-aqst/exports/csv
 
 ### Méthode de récupération
 
