@@ -16,6 +16,13 @@ L’analyse porte notamment sur :
 - le trafic ;
 - les causes de retard.
 
+##  Contenu du dépôt
+
+- `projet_tgv.ipynb` : notebook principal contenant le chargement des données, le nettoyage, l’analyse descriptive, les visualisations et la modélisation ;
+- `utils.py` : fonctions utilitaires utilisées dans le projet, notamment pour la création des saisons et certains graphiques ;
+- `requirements.txt` : liste des bibliothèques nécessaires à l’exécution du projet ;
+- `README.md` : présentation du projet, des données et des consignes d’exécution.
+
 ## 2. Comment lancer le projet
 Cloner le repository :
 ```bash
@@ -63,6 +70,19 @@ Elles sont récupérées dynamiquement via l’API open data de la SNCF avec la 
 | prct_cause_gestion_gare | Gestion des gares |
 | prct_cause_prise_en_charge_voyageurs | Voyageurs |
 
+### Variables construites
+
+Dans le cadre du prétraitement, plusieurs variables ont été créées à partir des données brutes :
+
+- `annee` : année d’observation extraite de la date ;
+- `mois` : mois d’observation ;
+- `saison` : saison associée au mois ;
+- `ligne` : liaison ferroviaire construite à partir de la gare de départ et de la gare d’arrivée ;
+- `circulations_effectives` : nombre de trains effectivement circulés, calculé comme `nb_train_prevu - nb_annulation` ;
+- `taux_annulation` : part des trains annulés parmi les trains prévus ;
+- `regularite_arrivee` : proportion de trains arrivés sans retard parmi les circulations effectivement réalisées.
+
+Ces variables permettent de mieux décrire les conditions d’exploitation des lignes et de construire une mesure cohérente de la régularité à l’arrivée.
 
 ## 4. Analyse descriptive
 
@@ -86,19 +106,23 @@ Justification:
 - bonne gestion des variables catégorielles (notamment la variable ligne) ;
 - meilleures performances que la régression linéaire sur ce jeu de données.
 Performances:
-- MAE : 0.0399
-- RMSE : 0.0641
-- R² : 0.43
-Résultats principaux:
+- MAE : 0.0401
+- RMSE : 0.0647
+- R² : 0.4225
+Résultats principaux :
 
-Les variables les plus importantes sont :
+Les variables les plus influentes sont :
 
+- la ligne ferroviaire ;
+- le volume de circulations prévues ;
 - la gestion du trafic ;
 - les causes externes ;
-- la durée du trajet ;
-- le volume de circulations.
+- la durée moyenne du trajet ;
+- le taux d’annulation.
 
 
 ## 6. Conclusion
-La régularité des TGV dépend d’un ensemble de facteurs interdépendants.
-Les causes opérationnelles et externes jouent un rôle majeur, ce qui souligne la complexité de la gestion du transport ferroviaire.
+
+La régularité des TGV dépend d’un ensemble de facteurs interdépendants.  
+L’analyse montre que la liaison ferroviaire, le volume de circulations, la gestion du trafic, les causes externes, la durée du trajet et le taux d’annulation jouent un rôle important.  
+Ces résultats soulignent la complexité de la ponctualité ferroviaire, qui dépend à la fois de caractéristiques propres aux lignes, de facteurs opérationnels et de contraintes externes.
