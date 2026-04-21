@@ -57,15 +57,15 @@ Elles sont récupérées dynamiquement via l’API open data de la SNCF avec la 
 | gare_depart | Gare de départ |
 | gare_arrivee | Gare d’arrivée |
 | duree_moyenne | Durée moyenne du trajet |
-| nb_train_prevu | Nombre de trains prévus |
-| nb_annulation | Nombre de trains annulés |
-| nb_train_retard_arrivee | Nombre de trains en retard à l’arrivée |
-| prct_cause_externe | Causes externes |
-| prct_cause_infra | Infrastructure |
-| prct_cause_gestion_trafic | Gestion du trafic |
-| prct_cause_materiel_roulant | Matériel roulant |
-| prct_cause_gestion_gare | Gestion des gares |
-| prct_cause_prise_en_charge_voyageurs | Voyageurs |
+| nb_train_prevu | Nombre de trains prévus sur la liaison et pour le mois considérés |
+| nb_annulation | Nombre de trains annulés parmi les trains prévus |
+| nb_train_retard_arrivee | Nombre de trains arrivés en retard |
+| prct_cause_externe | Part des retards attribuée à des causes externes à l’exploitation ferroviaire |
+| prct_cause_infra | Part des retards attribuée à des problèmes d’infrastructure |
+| prct_cause_gestion_trafic | Part des retards attribuée à la gestion du trafic ferroviaire |
+| prct_cause_materiel_roulant | Part des retards attribuée à des problèmes de matériel roulant |
+| prct_cause_gestion_gare | Part des retards attribuée à la gestion en gare |
+| prct_cause_prise_en_charge_voyageurs | Part des retards attribuée à la prise en charge des voyageurs |
 
 ### Variables construites
 
